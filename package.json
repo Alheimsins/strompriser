@@ -1,0 +1,32 @@
+{
+  "name": "@alheimsins/strompriser",
+  "version": "1.0.0",
+  "description": "Module for retrieving the prices for electricity in Norway from www.hvakosterstrommen.no",
+  "type": "module",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "standard",
+    "standard-fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alheimsins/strompriser.git"
+  },
+  "keywords": [],
+  "author": "Geir Gåsodden <geir.gasodden@gmail.com> (https://github.com/zrrrzzt)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alheimsins/strompriser/issues"
+  },
+  "homepage": "https://github.com/Alheimsins/strompriser#readme",
+  "engines": {
+    "node": ">=18.13.0"
+  },
+  "devDependencies": {
+    "husky": "8.0.3",
+    "standard": "17.0.0"
+  }
+}

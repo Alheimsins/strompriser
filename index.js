@@ -1,9 +1,9 @@
-async function getData (url) {
+async function getPrices (url) {
   const response = await fetch(url)
   const json = await response.json()
   return json
 }
 
 export {
-  getData
+  getPrices
 }

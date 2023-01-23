@@ -1,7 +1,17 @@
 async function getPrices (url) {
-  const response = await fetch(url)
-  const json = await response.json()
-  return json
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+        console.error('Response not OK', response.status)
+        return []  
+    } else {
+        const json = await response.json()
+        return json
+    }
+  } catch (error) {
+    console.error(error)
+    return []
+  }
 }
 
 export {

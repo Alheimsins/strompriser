@@ -1,4 +1,4 @@
-async function getPrices (url) {
+async function getPricesForDay (url) {
   try {
     const response = await fetch(url)
     if (!response.ok) {
@@ -27,8 +27,19 @@ function addDays (dateString, numberOfDays) {
   return copyOfDate
 }
 
+async function getPrices (dato = new Date().toISOString(), zone = 'NO2') {
+  const today = new Date(dato).toISOString().substring(0, 10)
+  const tomorrow = addDays(dato, 1).toISOString().substring(0, 10)
+  const todayUrl = generateUrl(today, zone)
+  const tomorrowUrl = generateUrl(tomorrow, zone)
+  const todaysPrices = await getPricesForDay(todayUrl)
+  const tomorrowsPrices = await getPricesForDay(tomorrowUrl)
+  return [...todaysPrices, ...tomorrowsPrices]
+}
+
 export {
   getPrices,
+  getPricesForDay,
   generateUrl,
   addDays
 }

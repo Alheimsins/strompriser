@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Alheimsins/strompriser#readme",
   "engines": {
-    "node": ">=18.13.0"
+    "node": ">=18.14.0"
   },
   "devDependencies": {
     "husky": "8.0.3",
